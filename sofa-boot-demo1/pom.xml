@@ -34,6 +34,11 @@
             <groupId>com.alipay.sofa</groupId>
             <artifactId>infra-sofa-boot-starter</artifactId>
         </dependency>
+        <!--测试-->
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>test-sofa-boot-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
