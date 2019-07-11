@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://sofastack.io/schema/sofaboot"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://sofastack.io/schema/sofaboot http://sofastack.io/schema/sofaboot.xsd"
+       default-autowire="byName">
+    <!-- direct -->
+    <sofa:reference id="helloSyncServiceReference" interface="com.jeiker.api.service.HelloSyncService">
+        <sofa:binding.bolt>
+            <sofa:global-attrs timeout="3000" address-wait-time="2000"/>  <!-- 调用超时；地址等待时间。 -->
+            <sofa:route target-url="127.0.0.1:8080"/>  <!-- 直连地址 -->
+            <!--<sofa:method name="sayName" timeout="3000"/> &lt;!&ndash; 方法级别配置 &ndash;&gt;-->
+        </sofa:binding.bolt>
+    </sofa:reference>
+</beans>
