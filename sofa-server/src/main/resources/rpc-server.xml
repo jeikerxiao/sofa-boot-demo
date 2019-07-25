@@ -10,4 +10,11 @@
     <sofa:service ref="helloSyncServiceImpl" interface="com.jeiker.api.service.HelloSyncService">
         <sofa:binding.bolt/>
     </sofa:service>
+
+    <!-- 发布 generic 服务 -->
+    <bean id="helloGenericServiceImpl" class="com.jeiker.server.service.HelloGenericServiceImpl"/>
+    <sofa:service ref="helloGenericServiceImpl" interface="com.jeiker.api.service.HelloGenericService">
+        <sofa:binding.bolt/>
+    </sofa:service>
+
 </beans>

@@ -13,4 +13,11 @@
             <!--<sofa:method name="sayName" timeout="3000"/> &lt;!&ndash; 方法级别配置 &ndash;&gt;-->
         </sofa:binding.bolt>
     </sofa:reference>
+    <!-- 泛化调用 -->
+    <sofa:reference jvm-first="false" id="helloGenericServiceReference"
+                    interface="com.alipay.sofa.rpc.api.GenericService">
+        <sofa:binding.bolt>
+            <sofa:global-attrs generic-interface="com.jeiker.api.service.HelloGenericService"/>
+        </sofa:binding.bolt>
+    </sofa:reference>
 </beans>

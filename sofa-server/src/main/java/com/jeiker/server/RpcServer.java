@@ -15,7 +15,7 @@ public class RpcServer {
     public static void main(String[] args) {
         ServerConfig serverConfig = new ServerConfig()
                 .setProtocol("bolt") // 设置一个协议，默认bolt
-                .setPort(8080) // 设置一个端口，默认12200
+                .setPort(8080) // 设置一个端口，默认 12200
                 .setDaemon(false); // 非守护线程
 
         ProviderConfig<HelloSyncService> providerConfig = new ProviderConfig<HelloSyncService>()

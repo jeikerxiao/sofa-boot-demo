@@ -1,5 +1,7 @@
 package com.jeiker.client;
 
+import com.alipay.hessian.generic.model.GenericObject;
+import com.alipay.sofa.rpc.api.GenericService;
 import com.jeiker.api.service.HelloSyncService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +22,17 @@ public class SofaClientApplication {
                 .getBean("helloSyncServiceReference");
 
         System.out.println(helloSyncServiceReference.saySync("sync"));
+
+
+        GenericObject genericObject = new GenericObject(
+                "com.alipay.sofa.rpc.samples.generic.SampleGenericParamModel");
+        genericObject.putField("name", "Bible");
+
+
+        GenericService sampleGenericServiceReference = (GenericService) applicationContext.getBean("helloGenericServiceReference");
+        GenericObject genericResult = (GenericObject) sampleGenericServiceReference.$genericInvoke("sayGeneric",
+                new String[]{"com.alipay.sofa.rpc.samples.generic.SampleGenericParamModel"},
+                new Object[]{"xiao"});
     }
 
 }

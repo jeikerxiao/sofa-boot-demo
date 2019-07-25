@@ -21,7 +21,7 @@ public class RpcClient {
 
         while (true) {
             try {
-                System.out.println(helloService.saySync("world"));
+                System.out.println(helloService.saySync("Hello"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
